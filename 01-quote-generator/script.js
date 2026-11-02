@@ -3,10 +3,25 @@ const quoteText = document.getElementById("quote");
 const authorText = document.getElementById("author");
 const twitterButton = document.getElementById("x-twitter");
 const newQuoteButton = document.getElementById("new-quote");
+const loader = document.getElementById("loader");
 
 let apiQuotes = [];
+
+// Show loader
+function loading() {
+  loader.hidden = false;
+  quoteContainer.hidden = true;
+}
+
+// Hide loader
+function complete() {
+  loader.hidden = true;
+  quoteContainer.hidden = false;
+}
+
 //Show New Quote
 function newQuote() {
+  loading();
   // Pick a random quote from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
@@ -16,7 +31,9 @@ function newQuote() {
   } else {
     quoteText.classList.remove("long-quote");
   }
+  // Set Quote, Hide Loader
   quoteText.textContent = quote.quote;
+  complete();
 
   // Check if Author field is blank and replace it with 'Unknown'
   if (!quote.author) {
@@ -28,6 +45,7 @@ function newQuote() {
 
 // Get Quotes From API
 async function getQuotes() {
+  loading();
   // limit=0 returns every quote instead of the default 30
   const apiUrl = "https://dummyjson.com/quotes?limit=0";
   try {
