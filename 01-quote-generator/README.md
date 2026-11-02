@@ -7,10 +7,10 @@ Shows an inspiring quote and lets you get a new one or share it on X.
 ## Features
 
 - [x] Responsive quote card layout
-- [ ] Show a random quote
-- [ ] "New Quote" button
-- [ ] Smaller text for long quotes
-- [ ] Share the quote on X
+- [x] Show a random quote from the [DummyJSON](https://dummyjson.com/docs/quotes) API
+- [x] "New Quote" button
+- [x] Smaller text for long quotes
+- [x] Share the quote on X
 
 ## Built with
 
