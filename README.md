@@ -15,7 +15,7 @@ has a live demo.
 
 | #   | Project                                 | Concepts                                         | Demo                                                                     | Status         |
 | --- | --------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------ | -------------- |
-| 01  | [Quote Generator](./01-quote-generator) | DOM, events, `Math.random`, state → render       | [Live](https://souravxdev.github.io/JavaScript-Projects/01-quote-generator/) | 🚧 In progress |
+| 01  | [Quote Generator](./01-quote-generator) | DOM, events, `fetch`, `async/await`, loading UI | [Live](https://souravxdev.github.io/JavaScript-Projects/01-quote-generator/) | ✅ Done        |
 
 ## Roadmap
 
