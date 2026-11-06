@@ -6,6 +6,11 @@ const twitterButton = document.getElementById("x-twitter");
 const newQuoteButton = document.getElementById("new-quote");
 const loader = document.getElementById("loader");
 
+// Quote font size range, in rem
+const MAX_FONT_SIZE = 2.75;
+const MIN_FONT_SIZE = 1;
+const FONT_SIZE_STEP = 0.125;
+
 let apiQuotes = [];
 
 function showLoader() {
@@ -24,21 +29,26 @@ function newQuote() {
   // Pick a random quote from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
-  // Check Quote Length to determine styling
-  if (quote.quote.length > 50) {
-    quoteText.classList.add("long-quote");
-  } else {
-    quoteText.classList.remove("long-quote");
-  }
-  // Set Quote, Hide Loader
+  // Set Quote and Author ('Unknown' if blank)
   quoteText.textContent = quote.quote;
-  removeLoader();
+  authorText.textContent = quote.author || "Unknown";
 
-  // Check if Author field is blank and replace it with 'Unknown'
-  if (!quote.author) {
-    authorText.textContent = "Unknown";
-  } else {
-    authorText.textContent = quote.author;
+  // Show the card first: hidden elements have no size to measure
+  removeLoader();
+  fitQuoteText();
+}
+
+// Shrink the quote text until the card's content fits its fixed height
+function fitQuoteText() {
+  let fontSize = MAX_FONT_SIZE;
+  quoteText.style.fontSize = `${fontSize}rem`;
+
+  while (
+    quoteContainer.scrollHeight > quoteContainer.clientHeight &&
+    fontSize > MIN_FONT_SIZE
+  ) {
+    fontSize -= FONT_SIZE_STEP;
+    quoteText.style.fontSize = `${fontSize}rem`;
   }
 }
 
@@ -66,6 +76,7 @@ function tweetQuote() {
 // Event Listeners
 newQuoteButton.addEventListener("click", newQuote);
 twitterButton.addEventListener("click", tweetQuote);
+window.addEventListener("resize", fitQuoteText);
 
 // On Load
 getQuotes();

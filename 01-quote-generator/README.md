@@ -11,7 +11,8 @@ Shows an inspiring quote and lets you get a new one or share it on X.
 - [x] Random quote from the [DummyJSON](https://dummyjson.com/docs/quotes) API
 - [x] "New Quote" button
 - [x] Loader while quotes are loading
-- [x] Smaller text for long quotes
+- [x] Fixed-size card, so the buttons never move
+- [x] Long quotes shrink to fit the card
 - [x] Share the quote on X
 - [x] Responsive layout, visible keyboard focus
 
