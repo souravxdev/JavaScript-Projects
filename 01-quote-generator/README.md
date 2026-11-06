@@ -30,10 +30,29 @@ HTML, CSS (Flexbox, media queries) and vanilla JavaScript (`fetch`, `async/await
 
 ## Next improvements
 
-- Keep the quotes and current quote in a `state` object and draw the card from it with `render()`.
-- Name magic values as constants (`API_URL`, `LONG_QUOTE_LENGTH`).
-- Never show the same quote twice in a row.
-- Use `<blockquote>` and `<figcaption>` for the quote, and `aria-live` so screen readers hear new quotes.
+**Code quality**
+
+- [ ] Keep quotes, current quote and error in a `state` object and draw the card with `render()`
+- [ ] Order the file: constants → DOM → state → UI helpers → data → actions → events
+- [ ] Clearer names (`hideLoader`, `showRandomQuote`) and move `API_URL` to a constant
+- [ ] Use `<blockquote>` and `<figcaption>` for the quote
+- [ ] Re-fit the text once the web font has loaded (`document.fonts.ready`)
+
+**Features**
+
+- [ ] Copy to clipboard and native share sheet on mobile (Clipboard and Web Share APIs)
+- [ ] Favourites saved in `localStorage`
+- [ ] Shareable link to each quote (`?id=42`)
+- [ ] Keyboard shortcuts and no repeated quotes (Fisher–Yates shuffle)
+- [ ] Dark mode with CSS custom properties
+
+**Extras**
+
+- [ ] Search or filter by author
+- [ ] Download the quote as an image (Canvas API)
+- [ ] Work offline as a PWA
+- [ ] Lighthouse score of 100
+- [ ] Load quotes from my own Node/Express API
 
 ## Credits
 
