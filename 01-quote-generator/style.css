@@ -34,6 +34,11 @@ body {
   box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
+/* display: flex above overrides the hidden attribute, so restore it */
+.quote-container[hidden] {
+  display: none;
+}
+
 /* Auto margins share the free space: quote centred, buttons at the bottom */
 .quote-text {
   margin-top: auto;
