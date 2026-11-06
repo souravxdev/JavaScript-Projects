@@ -25,7 +25,14 @@ function removeLoader() {
 
 //Show New Quote
 function newQuote() {
+  // No quotes yet (the request failed): try loading them again
+  if (apiQuotes.length === 0) {
+    getQuotes();
+    return;
+  }
+
   showLoader();
+  twitterButton.style.visibility = "visible";
   // Pick a random quote from apiQuotes array
   const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
 
@@ -58,12 +65,27 @@ async function getQuotes() {
   const apiUrl = "https://dummyjson.com/quotes?limit=0";
   try {
     const response = await fetch(apiUrl);
+    // fetch only rejects on network failure, so check for 404/500 ourselves
+    if (!response.ok) {
+      throw new Error(`Quotes request failed with status ${response.status}`);
+    }
     const data = await response.json();
     apiQuotes = data.quotes;
     newQuote();
   } catch (error) {
-    alert(error);
+    console.error(error);
+    showError();
   }
+}
+
+// Show a friendly message in the card instead of a quote
+function showError() {
+  quoteText.textContent = "Couldn't load quotes. Please try again.";
+  authorText.textContent = "";
+  // Nothing worth sharing; visibility keeps the button's space so New Quote stays put
+  twitterButton.style.visibility = "hidden";
+  removeLoader();
+  fitQuoteText();
 }
 
 // Tweet Quote

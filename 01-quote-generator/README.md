@@ -11,6 +11,7 @@ Shows an inspiring quote and lets you get a new one or share it on X.
 - [x] Random quote from the [DummyJSON](https://dummyjson.com/docs/quotes) API
 - [x] "New Quote" button
 - [x] Loader while quotes are loading
+- [x] Friendly error in the card if quotes fail to load, and "New Quote" retries
 - [x] Fixed-size card, so the buttons never move
 - [x] Long quotes shrink to fit the card
 - [x] Share the quote on X
@@ -30,7 +31,6 @@ HTML, CSS (Flexbox, media queries) and vanilla JavaScript (`fetch`, `async/await
 ## Next improvements
 
 - Keep the quotes and current quote in a `state` object and draw the card from it with `render()`.
-- Check `response.ok` and show errors in the card instead of `alert()`.
 - Name magic values as constants (`API_URL`, `LONG_QUOTE_LENGTH`).
 - Never show the same quote twice in a row.
 - Use `<blockquote>` and `<figcaption>` for the quote, and `aria-live` so screen readers hear new quotes.
