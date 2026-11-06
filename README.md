@@ -13,15 +13,16 @@ has a live demo.
 
 ## Projects
 
-| #   | Project                                 | Concepts                                         | Demo                                                                     | Status         |
-| --- | --------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------------------ | -------------- |
-| 01  | [Quote Generator](./01-quote-generator) | DOM, events, `fetch`, `async/await`, loading UI | [Live](https://souravxdev.github.io/JavaScript-Projects/01-quote-generator/) | ✅ Done        |
+| #   | Project                                   | Concepts                                                   | Demo                                                                          | Status         |
+| --- | ----------------------------------------- | ---------------------------------------------------------- | ----------------------------------------------------------------------------- | -------------- |
+| 01  | [Quote Generator](./01-quote-generator)   | DOM, events, `fetch`, `async/await`, loading UI            | [Live](https://souravxdev.github.io/JavaScript-Projects/01-quote-generator/)  | ✅ Done        |
+| 02  | [Infinity Scroll](./02-infinity-scroll)   | Paginated `fetch`, `IntersectionObserver`, lazy loading    | [Live](https://souravxdev.github.io/JavaScript-Projects/02-infinity-scroll/)  | 🚧 In progress |
 
 ## Roadmap
 
 1. **DOM and events:** quote generator, counter, to-do list, digital clock, tip calculator, quiz
 2. **State and logic:** calculator, form validator, expense tracker, Kanban board, Pomodoro timer
-3. **Async and APIs:** weather app, GitHub profile finder, movie search, currency converter
+3. **Async and APIs:** infinity scroll, weather app, GitHub profile finder, movie search, currency converter
 4. **Full stack:** REST API with Node and Express, to-do app on that API, database persistence
 
 ## How each project is built
