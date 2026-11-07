@@ -1,1 +1,18 @@
-console.log("Infinity Scroll: script loaded");
+// Unsplash API
+const count = 10;
+const apiKey = UNSPLASH_ACCESS_KEY;
+const apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${count}`;
+
+// Get photos fromunsplash API
+async function getPhotos() {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    console.log(data);
+  } catch (error) {
+    // Catch error here
+  }
+}
+
+//  On Load
+getPhotos();
